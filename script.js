@@ -1,5 +1,3 @@
-console.log("Hello World!");
-
 function getComputerChoice(){
     let choice = Math.floor(Math.random() * 3);
     switch(choice){
@@ -29,18 +27,27 @@ function getHumanChoice(){
 }
 
 function playRound(humanChoice, computerChoice){
-    let result;
-    if (humanChoice === computerChoice) result = "tied with";
+    let result, score;
+    if (humanChoice === computerChoice) {result = "tied with"; score = 0;}
     else if ( (humanChoice === "rock" && computerChoice === "paper") 
         || (humanChoice === "paper" && computerChoice === "scissors")
-        || (humanChoice === "scissors" && computerChoice === "rock")) result = "lost to";
-    else result = "won against";
+        || (humanChoice === "scissors" && computerChoice === "rock")) {result = "lost to"; score = -1;}
+    else {result = "won against"; score = 1;}
 
     console.log(`Your choice of ${humanChoice} ${result} ${computerChoice}`);    
+    return score;
 }
 
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+function playGame(){
+    let score = 0;
+    for(let i = 0; i < 5; i++){
+        let humanSelection = getHumanChoice();
+        let computerSelection = getComputerChoice();
+        score += playRound(humanSelection, computerSelection);
+    }
+    if (score >0) console.log("You Won!");
+    else if (score === 0) console.log("You tied with the computer.");
+    else console.log("You lost.");
+}
 
-playRound(humanSelection, computerSelection);
-
+playGame();
