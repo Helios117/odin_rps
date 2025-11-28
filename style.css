@@ -1,0 +1,103 @@
+:root{
+  --bg-1: #f6f7ff;
+  --accent-1: #af40ff;
+  --accent-2: #5b42f3;
+  --accent-3: #00ddeb;
+  --panel: #05062d;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:
+    radial-gradient(1000px 400px at 10% 10%, rgba(175,64,255,0.06), transparent 8%),
+    radial-gradient(800px 300px at 95% 90%, rgba(0,221,235,0.035), transparent 8%),
+    linear-gradient(180deg, var(--bg-1), #ffffff 60%);
+  color:#0b1020;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:24px;
+}
+
+.title-card{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:8px auto 28px;
+  max-width:1100px;
+  padding:0 16px;
+}
+
+.title-text, #result{
+  font-size:clamp(1.25rem, 2.5vw, 2rem);
+  font-weight:600;
+  color:transparent;
+  background-image: linear-gradient(144deg, var(--accent-1), var(--accent-2) 50%, var(--accent-3));
+  -webkit-background-clip:text;
+  background-clip:text;
+  letter-spacing:0.2px;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+}
+
+button {
+    align-items: center;
+    background-image: linear-gradient(144deg, #af40ff, #5b42f3 50%, #00ddeb);
+    border: 0;
+    border-radius: 8px;
+    box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+    box-sizing: border-box;
+    color: #ffffff;
+    display: flex;
+    font-size: 18px;
+    justify-content: center;
+    line-height: 1em;
+    max-width: 100%;
+    min-width: 140px;
+    padding: 3px;
+    text-decoration: none;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+button:active,
+button:hover {
+    outline: 0;
+}
+
+button span {
+    background-color: rgb(5, 6, 45);
+    padding: 16px 24px;
+    border-radius: 6px;
+    width: 100%;
+    height: 100%;
+    transition: 300ms;
+}
+
+button:hover span {
+    background: none;
+}
+
+button:active {
+    transform: scale(0.9);
+}
+
+#result{
+  max-width:1100px;
+  margin:0 auto;
+  padding:16px;
+  text-align:center;
+  color:#222;
+}

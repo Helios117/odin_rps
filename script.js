@@ -3,10 +3,8 @@ function getComputerChoice(){
     switch(choice){
         case 0:
             return "rock";
-            break;
         case 1:
             return "paper";
-            break;
         case 2:
             return "scissors";
     }
@@ -38,16 +36,27 @@ function playRound(humanChoice, computerChoice){
     return score;
 }
 
-function playGame(){
-    let score = 0;
-    for(let i = 0; i < 5; i++){
-        let humanSelection = getHumanChoice();
-        let computerSelection = getComputerChoice();
-        score += playRound(humanSelection, computerSelection);
-    }
-    if (score >0) console.log("You Won!");
-    else if (score === 0) console.log("You tied with the computer.");
-    else console.log("You lost.");
+function playGame(humanChoice){
+    let computerSelection = getComputerChoice();
+    score += playRound(humanChoice, computerSelection);
+    let result = document.getElementById("result");
+    result.innerText = "Score: " + score;
 }
 
-playGame();
+let buttonRock = document.getElementById("rock");
+let buttonPaper = document.getElementById("paper");
+let buttonScissors = document.getElementById("scissors");
+
+let score = 0;
+
+buttonRock.addEventListener("click", () => {
+    playGame("rock");
+});
+
+buttonPaper.addEventListener("click", () => {
+    playGame("paper");
+});
+
+buttonScissors.addEventListener("click", () => {
+    playGame("scissors");
+});
