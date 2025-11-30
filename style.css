@@ -1,43 +1,43 @@
 :root{
-  --bg-1: #f6f7ff;
-  --accent-1: #af40ff;
-  --accent-2: #5b42f3;
-  --accent-3: #00ddeb;
-  --panel: #05062d;
+    --bg-1: #f6f7ff;
+    --accent-1: #af40ff;
+    --accent-2: #5b42f3;
+    --accent-3: #00ddeb;
+    --panel: #05062d;
 }
 
 *{box-sizing:border-box}
 html,body{height:100%}
 body{
-  margin:0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  background:
-    radial-gradient(1000px 400px at 10% 10%, rgba(175,64,255,0.06), transparent 8%),
-    radial-gradient(800px 300px at 95% 90%, rgba(0,221,235,0.035), transparent 8%),
-    linear-gradient(180deg, var(--bg-1), #ffffff 60%);
-  color:#0b1020;
-  -webkit-font-smoothing:antialiased;
-  -moz-osx-font-smoothing:grayscale;
-  padding:24px;
+    margin:0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    background:
+      radial-gradient(1000px 400px at 10% 10%, rgba(175,64,255,0.06), transparent 8%),
+      radial-gradient(800px 300px at 95% 90%, rgba(0,221,235,0.035), transparent 8%),
+      linear-gradient(180deg, var(--bg-1), #ffffff 60%);
+    color:#0b1020;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+    padding:24px;
 }
 
 .title-card{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  margin:8px auto 28px;
-  max-width:1100px;
-  padding:0 16px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:8px auto 28px;
+    max-width:1100px;
+    padding:0 16px;
 }
 
-.title-text, #result{
-  font-size:clamp(1.25rem, 2.5vw, 2rem);
-  font-weight:600;
-  color:transparent;
-  background-image: linear-gradient(144deg, var(--accent-1), var(--accent-2) 50%, var(--accent-3));
-  -webkit-background-clip:text;
-  background-clip:text;
-  letter-spacing:0.2px;
+.title-text, .score-text{
+    font-size:clamp(1.25rem, 2.5vw, 2rem);
+    font-weight:600;
+    color:transparent;
+    background-image: linear-gradient(144deg, var(--accent-1), var(--accent-2) 50%, var(--accent-3));
+    -webkit-background-clip:text;
+    background-clip:text;
+    letter-spacing:0.2px;
 }
 
 .button-container {
@@ -94,10 +94,15 @@ button:active {
     transform: scale(0.9);
 }
 
-#result{
-  max-width:1100px;
-  margin:0 auto;
-  padding:16px;
-  text-align:center;
-  color:#222;
+.result{
+    max-width:1100px;
+    margin:0 auto;
+    padding:16px;
+    text-align:center;
+    display: flex;
+    flex-direction: column;
+}
+
+.result-text {
+    font-size: larger;
 }

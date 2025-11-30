@@ -31,7 +31,8 @@ function playRound(humanChoice, computerChoice){
         || (humanChoice === "paper" && computerChoice === "scissors")
         || (humanChoice === "scissors" && computerChoice === "rock")) {result = "lost to"; score = -1;}
     else {result = "won against"; score = 1;}
-
+    let resultText = document.getElementsByClassName("result-text")[0];
+    resultText.innerText = `Your choice of ${humanChoice} ${result} ${computerChoice}`;
     console.log(`Your choice of ${humanChoice} ${result} ${computerChoice}`);    
     return score;
 }
@@ -39,7 +40,7 @@ function playRound(humanChoice, computerChoice){
 function playGame(humanChoice){
     let computerSelection = getComputerChoice();
     score += playRound(humanChoice, computerSelection);
-    let result = document.getElementById("result");
+    let result = document.getElementsByClassName("score-text")[0];
     result.innerText = "Score: " + score;
 }
 
